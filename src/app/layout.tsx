@@ -3,6 +3,10 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 import { Sidebar } from '@/components/layout/sidebar';
 import { Header } from '@/components/layout/header';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+
 
 export const metadata: Metadata = {
   title: 'Raseed AI',
@@ -19,9 +23,9 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body antialiased" suppressHydrationWarning={true}>
+      <body className={`${inter.variable} font-body antialiased`} suppressHydrationWarning={true}>
         <div className="flex min-h-screen w-full bg-background">
           <Sidebar />
           <div className="flex flex-1 flex-col">
