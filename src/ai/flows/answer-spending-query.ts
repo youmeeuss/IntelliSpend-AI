@@ -13,7 +13,7 @@ import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 
 const AnswerSpendingQueryInputSchema = z.object({
-  query: z.string().describe('The user's question about their spending habits.'),
+  query: z.string().describe("The user's question about their spending habits."),
   spendingData: z.string().describe('The user spending data.'),
 });
 export type AnswerSpendingQueryInput = z.infer<typeof AnswerSpendingQueryInputSchema>;
