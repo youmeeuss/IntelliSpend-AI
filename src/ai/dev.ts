@@ -1,1 +1,6 @@
-// Flows will be imported for their side effects in this file.
+import { config } from 'dotenv';
+config();
+
+import '@/ai/flows/answer-spending-query.ts';
+import '@/ai/flows/extract-receipt-data.ts';
+import '@/ai/flows/generate-investment-recommendations.ts';
