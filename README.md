@@ -2,7 +2,7 @@
 
 **Raseed AI** is a modern, AI-powered personal finance web application built with Next.js and Google's Genkit. It provides intelligent tools to help you track expenses, gain financial insights, and get smart investment advice.
 
-![Raseed AI Dashboard](https://github.com/user-attachments/assets/739373d5-a744-469a-a82e-998e379658a5)
+![Raseed AI Dashboard](./docs/images/dashboard-rasheedAI.png)
 
 ## ✨ Core Features
 
