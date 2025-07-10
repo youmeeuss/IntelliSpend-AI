@@ -24,6 +24,7 @@ const nextConfig: NextConfig = {
       config.resolve.fallback = {
         ...config.resolve.fallback,
         async_hooks: false,
+        fs: false,
       };
     }
 
