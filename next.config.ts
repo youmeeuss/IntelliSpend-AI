@@ -18,6 +18,17 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  webpack: (config, {isServer}) => {
+    if (!isServer) {
+      // Don't bundle modules that reference browser-incompatible APIs.
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        async_hooks: false,
+      };
+    }
+
+    return config;
+  },
 };
 
 export default nextConfig;
