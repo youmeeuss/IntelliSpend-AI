@@ -1,4 +1,5 @@
-# Raseed AI 💰 scanner
+#  IntelliSpend-AI
+💰 scanner
 
 **Raseed AI** is a modern, AI-powered personal finance web application built with Next.js and Google's Genkit. It provides intelligent tools to help you track expenses, gain financial insights, and get smart investment advice.
 
