@@ -84,3 +84,4 @@ Contributions are welcome! If you have suggestions or want to improve the code, 
 3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
 4.  Push to the branch (`git push origin feature/YourAmazingFeature`).
 5.  Open a Pull Request.
+
