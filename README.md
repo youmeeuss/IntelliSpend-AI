@@ -18,7 +18,17 @@
 ### 1. Dynamic Wealth Dashboard
 ![IntelliSpend AI Dashboard](./docs/images/dashboard-new.png)
 
-### 2. Gamification & Rewards Hub
+### 2. Intelligent Receipt Vault
+![IntelliSpend AI Receipt Vault](./docs/images/receipt-vault.png)
+
+### 3. Expense & Transaction Manager
+![IntelliSpend AI Expense Manager](./docs/images/expenses-overview.png)
+
+### 4. Advanced Analytics & Forecasting Console
+![IntelliSpend AI Analytics Overview](./docs/images/analytics-overview.png)
+![IntelliSpend AI Analytics Insights](./docs/images/analytics-insights.png)
+
+### 5. Gamification & Rewards Hub
 ![Gamification Hub](./docs/images/gamification-new.png)
 
 ## 🛠️ Technology Stack
