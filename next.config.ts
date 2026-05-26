@@ -1,5 +1,16 @@
 import type {NextConfig} from 'next';
 
+if (typeof global !== 'undefined' && global.localStorage && !global.localStorage.getItem) {
+  global.localStorage = {
+    getItem: () => null,
+    setItem: () => {},
+    removeItem: () => {},
+    clear: () => {},
+    length: 0,
+    key: () => null,
+  } as any;
+}
+
 const nextConfig: NextConfig = {
   /* config options here */
   typescript: {

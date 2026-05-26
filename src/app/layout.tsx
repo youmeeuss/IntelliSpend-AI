@@ -1,16 +1,17 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
-import { Sidebar } from '@/components/layout/sidebar';
-import { Header } from '@/components/layout/header';
 import { Inter } from 'next/font/google';
+import { AppProvider } from '@/context/AppContext';
+import { AuthProvider } from '@/context/AuthContext';
+import { AuthGuard } from '@/components/auth-guard';
+import { LayoutContent } from '@/components/layout/layout-content';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
-
 export const metadata: Metadata = {
-  title: 'Raseed AI',
-  description: 'Your intelligent financial assistant.',
+  title: 'IntelliSpend AI',
+  description: 'Smart Finance. Simplified.',
 };
 
 export default function RootLayout({
@@ -19,22 +20,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
       </head>
       <body className={`${inter.variable} font-body antialiased`} suppressHydrationWarning={true}>
-        <div className="flex min-h-screen w-full bg-background">
-          <Sidebar />
-          <div className="flex flex-1 flex-col">
-            <Header />
-            <main className="flex-1 p-4 sm:p-6 md:p-8">
-              {children}
-            </main>
-          </div>
-        </div>
+        <AuthProvider>
+          <AuthGuard>
+            <AppProvider>
+              <LayoutContent>{children}</LayoutContent>
+            </AppProvider>
+          </AuthGuard>
+        </AuthProvider>
         <Toaster />
       </body>
     </html>

@@ -4,57 +4,57 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 224 71% 4%;
-    --card: 0 0% 100%;
-    --card-foreground: 224 71% 4%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 71% 4%;
-    --primary: 221 83% 53%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 221 83% 53%;
+    --background: 224 40% 6%; /* Deep Obsidian Blue-Gray (#0A0E17) */
+    --foreground: 210 40% 98%; /* Off-white */
+    --card: 224 35% 9%; /* Slate Glass Base */
+    --card-foreground: 210 40% 98%;
+    --popover: 224 35% 9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 185 100% 50%; /* Electric Cyan (#00F0FF) */
+    --primary-foreground: 224 71% 4%;
+    --secondary: 262 82% 60%; /* Indigo/Purple (#9333EA) */
+    --secondary-foreground: 210 40% 98%;
+    --muted: 224 25% 14%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 270 91% 65%; /* Soft Purple (#A855F7) */
+    --accent-foreground: 210 40% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221 83% 53%;
-    --radius: 0.5rem;
-    --chart-1: 221 83% 53%;
-    --chart-2: 166 84% 40%;
-    --chart-3: 38 92% 50%;
-    --chart-4: 0 84% 60%;
+    --border: 224 25% 16%;
+    --input: 224 25% 16%;
+    --ring: 185 100% 50%; /* Cyan Ring */
+    --radius: 0.75rem; /* Smoother, larger radius for fintech */
+    --chart-1: 185 100% 50%; /* Cyan */
+    --chart-2: 270 91% 65%;  /* Purple */
+    --chart-3: 221 83% 53%;  /* Google Blue */
+    --chart-4: 166 84% 40%;
     --chart-5: 262 82% 60%;
   }
 
   .dark {
-    --background: 220 13% 18%;
+    --background: 224 40% 6%;
     --foreground: 210 40% 98%;
-    --card: 220 13% 18%;
+    --card: 224 35% 9%;
     --card-foreground: 210 40% 98%;
-    --popover: 220 13% 18%;
+    --popover: 224 35% 9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 217.2 32.6% 17.5%;
+    --primary: 185 100% 50%;
+    --primary-foreground: 224 71% 4%;
+    --secondary: 262 82% 60%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
+    --muted: 224 25% 14%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 270 91% 65%;
     --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 217 91% 60%;
-    --chart-1: 217 91% 60%;
-    --chart-2: 166 84% 40%;
-    --chart-3: 38 92% 50%;
-    --chart-4: 0 84% 60%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 224 25% 16%;
+    --input: 224 25% 16%;
+    --ring: 185 100% 50%;
+    --chart-1: 185 100% 50%;
+    --chart-2: 270 91% 65%;
+    --chart-3: 221 83% 53%;
+    --chart-4: 166 84% 40%;
     --chart-5: 262 82% 60%;
   }
 }
@@ -64,6 +64,87 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground selection:bg-[#00F0FF]/30 selection:text-white;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom styled scrollbars for premium look */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(10, 14, 23, 0.5);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 240, 255, 0.3);
+  }
+}
+
+@layer components {
+  /* Override default Card styles to create glassmorphic float cards */
+  .rounded-lg.border.bg-card {
+    background-color: rgba(17, 22, 37, 0.45) !important;
+    backdrop-filter: blur(16px);
+    border-color: rgba(255, 255, 255, 0.04) !important;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .rounded-lg.border.bg-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 240, 255, 0.15) !important;
+    box-shadow: 
+      0 20px 40px -15px rgba(0, 0, 0, 0.7),
+      0 0 30px -5px rgba(168, 85, 247, 0.1),
+      inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  }
+
+  /* Dynamic neon gradient button */
+  .btn-gradient {
+    background: linear-gradient(135deg, #00F0FF 0%, #4285F4 50%, #A855F7 100%);
+    background-size: 200% auto;
+    color: #0A0E17 !important;
+    font-weight: 600;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(0, 240, 255, 0.2);
+  }
+  
+  .btn-gradient:hover {
+    background-position: right center;
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.4), 0 0 10px rgba(168, 85, 247, 0.2);
+    transform: translateY(-1px);
+  }
+
+  .btn-gradient:active {
+    transform: translateY(1px);
+  }
+
+  /* Neon text gradient selection */
+  .text-gradient {
+    background: linear-gradient(135deg, #00F0FF 0%, #4285F4 50%, #A855F7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* AI glowing shadow styles */
+  .ai-glow-cyan {
+    box-shadow: 0 0 35px -5px rgba(0, 240, 255, 0.15), 0 0 15px -8px rgba(0, 240, 255, 0.1);
+  }
+
+  .ai-glow-purple {
+    box-shadow: 0 0 35px -5px rgba(168, 85, 247, 0.15), 0 0 15px -8px rgba(168, 85, 247, 0.1);
+  }
+
+  /* Sidebar logo background neon circle */
+  .logo-glow {
+    background: linear-gradient(135deg, #00F0FF 0%, #A855F7 100%);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
   }
 }

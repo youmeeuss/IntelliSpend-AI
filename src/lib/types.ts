@@ -2,8 +2,9 @@ export type Transaction = {
   id: string;
   date: string;
   description: string;
-  category: 'Groceries' | 'Transport' | 'Entertainment' | 'Bills' | 'Shopping' | 'Food';
+  category: string;
   amount: number;
+  currency: string;
   location: string;
 };
 
@@ -12,8 +13,13 @@ export type Receipt = {
   vendor: string;
   date: string;
   totalAmount: number;
+  currency: string;
   items: { description: string; price: number }[];
   imageUrl: string;
+  isBlurry?: boolean;
+  blurExplanation?: string;
+  isFraudSuspected?: boolean;
+  fraudExplanation?: string;
 };
 
 export type WalletPass = {

@@ -1,14 +1,14 @@
 import type { Transaction, Receipt, WalletPass } from './types';
 
 export const mockTransactions: Transaction[] = [
-  { id: '1', date: '2024-07-15', description: 'Grocery Store', category: 'Groceries', amount: 75.6, location: 'Downtown' },
-  { id: '2', date: '2024-07-15', description: 'Gas Station', category: 'Transport', amount: 40.0, location: 'Highway' },
-  { id: '3', date: '2024-07-14', description: 'Cinema Tickets', category: 'Entertainment', amount: 30.0, location: 'Mall' },
-  { id: '4', date: '2024-07-14', description: 'Restaurant', category: 'Food', amount: 55.2, location: 'Downtown' },
-  { id: '5', date: '2024-07-13', description: 'Electric Bill', category: 'Bills', amount: 120.0, location: 'Home' },
-  { id: '6', date: '2024-07-12', description: 'Clothing Store', category: 'Shopping', amount: 150.0, location: 'Mall' },
-  { id: '7', date: '2024-07-11', description: 'Supermarket', category: 'Groceries', amount: 95.25, location: 'Suburbs' },
-  { id: '8', date: '2024-07-10', description: 'Coffee Shop', category: 'Food', amount: 12.5, location: 'Downtown' },
+  { id: '1', date: '2024-07-15', description: 'Grocery Store', category: 'Groceries', amount: 75.6, currency: 'USD', location: 'Downtown' },
+  { id: '2', date: '2024-07-15', description: 'Gas Station', category: 'Transport', amount: 40.0, currency: 'USD', location: 'Highway' },
+  { id: '3', date: '2024-07-14', description: 'Cinema Tickets', category: 'Entertainment', amount: 30.0, currency: 'EUR', location: 'Mall' },
+  { id: '4', date: '2024-07-14', description: 'Restaurant', category: 'Food', amount: 55.2, currency: 'GBP', location: 'Downtown London' },
+  { id: '5', date: '2024-07-13', description: 'Electric Bill', category: 'Bills', amount: 120.0, currency: 'USD', location: 'Home' },
+  { id: '6', date: '2024-07-12', description: 'Clothing Store', category: 'Shopping', amount: 150.0, currency: 'EUR', location: 'Paris Mall' },
+  { id: '7', date: '2024-07-11', description: 'Supermarket', category: 'Groceries', amount: 95.25, currency: 'USD', location: 'Suburbs' },
+  { id: '8', date: '2024-07-10', description: 'Coffee Shop', category: 'Food', amount: 12.5, currency: 'USD', location: 'Downtown' },
 ];
 
 export const mockReceipts: Receipt[] = [
@@ -17,6 +17,7 @@ export const mockReceipts: Receipt[] = [
     vendor: 'Tech Gagdets Inc.',
     date: '2024-07-10',
     totalAmount: 299.99,
+    currency: 'USD',
     items: [{ description: 'Wireless Headphones', price: 299.99 }],
     imageUrl: 'https://placehold.co/300x400.png',
   },
@@ -25,6 +26,7 @@ export const mockReceipts: Receipt[] = [
     vendor: 'Fresh Foods Market',
     date: '2024-07-15',
     totalAmount: 75.6,
+    currency: 'EUR',
     items: [
       { description: 'Organic Apples', price: 5.99 },
       { description: 'Whole Milk', price: 3.49 },
