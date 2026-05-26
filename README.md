@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 # IntelliSpend AI 💰
+=======
+#  IntelliSpend-AI
+💰 scanner
+>>>>>>> 46898c83e2780d0fb084da84042f2868ed007591
 
 **IntelliSpend AI** is a modern, AI-powered personal finance web application built with Next.js. It provides intelligent tools to help you track expenses, gain financial insights, and get smart investment advice.
 
