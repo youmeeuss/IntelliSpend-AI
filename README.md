@@ -7,7 +7,7 @@
 
 **IntelliSpend AI** is a modern, AI-powered personal finance web application built with Next.js. It provides intelligent tools to help you track expenses, gain financial insights, and get smart investment advice.
 
-![IntelliSpend AI Dashboard](./docs/images/dashboard-rasheedAI.png)
+![IntelliSpend AI Dashboard](./docs/images/dashboard-new.png)
 
 ## ✨ Core Features
 
@@ -17,6 +17,14 @@
 - **📊 Interactive Dashboard**: Visualize your monthly spending, savings goals, and investment opportunities in one central place.
 - **🗂️ Receipt & Expense Tracker**: Keep an organized, searchable vault of all your past receipts and track expenses with automatic categorization.
 - **💳 Digital Wallet Passes**: Generate and share summaries of your receipts, budget tips, or investment plans.
+
+## 📸 Screenshots & Walkthrough
+
+### 1. Dynamic Wealth Dashboard
+![IntelliSpend AI Dashboard](./docs/images/dashboard-new.png)
+
+### 2. Gamification & Rewards Hub
+![Gamification Hub](./docs/images/gamification-new.png)
 
 ## 🛠️ Technology Stack
 
